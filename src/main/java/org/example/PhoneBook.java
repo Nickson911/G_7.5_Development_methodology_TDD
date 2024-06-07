@@ -25,4 +25,11 @@ public class PhoneBook {
     public String findByName(String name) {
         return person.get(name);
     }
+
+    public String printAllNames() {
+        List<String> names = new ArrayList<>();
+        person.forEach((key, value) -> names.add(key));
+        Collections.sort(names);
+        return names.toString();
+    }
 }

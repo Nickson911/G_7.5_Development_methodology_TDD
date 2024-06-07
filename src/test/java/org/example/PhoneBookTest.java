@@ -45,4 +45,11 @@ public class PhoneBookTest {
         phoneBook.add(name2, number2);
         Assertions.assertEquals(number2, phoneBook.findByName(name2));
     }
+
+    @Test
+    void printAllNamesTest() {
+        phoneBook.add(name1, number1);
+        phoneBook.add(name2, number2);
+        Assertions.assertEquals("[Миша, Петя]", phoneBook.printAllNames());
+    }
 }
