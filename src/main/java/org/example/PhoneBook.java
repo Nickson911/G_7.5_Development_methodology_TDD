@@ -1,7 +1,16 @@
 package org.example;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 public class PhoneBook {
-    public int add (String user1, String number) {
-        return 0;
+
+    Map<String, String> person = new TreeMap();
+
+    public int add(String name, String number) {
+        if (!person.containsKey(name)) {
+            person.put(name, number);
+        }
+        return person.size();
     }
 }
