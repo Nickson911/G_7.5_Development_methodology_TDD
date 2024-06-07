@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.Assert.assertTrue;
+
 public class PhoneBookTest {
     PhoneBook phoneBook;
     public String name1 = "Миша";
@@ -35,5 +37,12 @@ public class PhoneBookTest {
         phoneBook.add(name1, number1);
         phoneBook.add(name2, number2);
         Assertions.assertEquals(name1, phoneBook.findByNumber(number1));
+    }
+
+    @Test
+    void findByNameTest() {
+        phoneBook.add(name1, number1);
+        phoneBook.add(name2, number2);
+        Assertions.assertEquals(number2, phoneBook.findByName(name2));
     }
 }

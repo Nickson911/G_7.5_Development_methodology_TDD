@@ -1,7 +1,6 @@
 package org.example;
 
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class PhoneBook {
 
@@ -21,5 +20,9 @@ public class PhoneBook {
                 .map(Map.Entry::getKey)
                 .findFirst()
                 .get();
+    }
+
+    public String findByName(String name) {
+        return person.get(name);
     }
 }
